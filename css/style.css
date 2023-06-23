@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    height: 30vh;
+    background-image: url('../img/library-wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 50%;
+    background-position: center top -10%;
+}
+
+.brand-content {
+    display: flex;
+    align-items: center;
+}
+
+.brand-content img {
+    margin-right: 10px;
+}
+
+.brand-content h1 {
+    background-color: #D2D2D252;
+    color: #ffffff;
+    font-size: 3em;
+    margin: 0;
+}
+
+form {
+    position: absolute;
+    top: 65%;
+    right: 2%;
+}
+
+form > #search {
+    border-radius: 80px 0 0 80px;
+}
+
+form > .btn {
+    border-radius: 0 80px 80px 0;
+}
+
+.request,
+.sign-in,
+.sign-out,
+.addNew {
+    position: absolute;
+    top: 10%;
+}
+
+.request {
+    right: 12%;
+}
+
+.sign-in {
+    right: 2%;
+}
+
+.sign-out {
+    right: 2%;
+}
+
+.addNew {
+    right: 21%;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .navbar {
+        height: 40vh;
+        background-size: 100% 70%;
+    }
+
+    form {
+        position: static;
+        margin-top: 10px;
+    }
+
+    .request,
+    .sign-in,
+    .sign-out,
+    .addNew {
+        position: static;
+        margin-top: 10px;
+        right: unset;
+    }
+}
+
+.table {
+    margin-top: 35vh;
+}
