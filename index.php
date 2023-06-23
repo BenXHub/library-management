@@ -35,13 +35,19 @@
                 </tr>
             </thead>
             <tbody class="w-100">
-            <?php do { ?>
-                <tr>
-                    <td><a href="details.php?ID=<?php echo $row['id'] ?>" style="text-decoration: none"><?php echo $row['title']; ?></a></td>
-                    <td><?php echo $row['author']; ?></td>
-                    <td><?php echo $row['copyright']; ?></td>
-                </tr>
-            <?php } while ($row = $books->fetch_assoc()); ?>
+            <?php
+            if ($row !== null) {
+                do {
+                    ?>
+                    <tr>
+                        <td><a href="details.php?ID=<?php echo $row['id'] ?>" style="text-decoration: none"><?php echo $row['title']; ?></a></td>
+                        <td><?php echo $row['author']; ?></td>
+                        <td><?php echo $row['copyright']; ?></td>
+                    </tr>
+                    <?php
+                } while ($row = $books->fetch_assoc());
+            }
+            ?>
             </tbody>
         </table>
     </div>
