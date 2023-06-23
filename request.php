@@ -35,7 +35,7 @@
                 <th>Contact No</th>
                 <th>Book Title</th>
                 <th>Date of Borrowing</th>
-                <th>Date of Return</th>
+                <th>Status</th>
             </tr>
             </thead>
             <tbody class="w-100">
@@ -51,7 +51,9 @@
                         <td><?php echo $row['ContactNo']; ?></td>
                         <td><?php echo $row['BookTitle']; ?></td>
                         <td><?php echo $row['Created_at']; ?></td>
-                        <td><?php echo $row['Updated_at']; ?></td>
+                        <td class="center-checkbox">
+                            <input type="checkbox" id="myCheckbox" name="updated[]" onchange="handleCheckboxChange()">
+                        </td>
                     </tr>
                     <?php
                 } while ($row = $borrower->fetch_assoc());
@@ -60,5 +62,23 @@
             </tbody>
         </table>
     </div>
+
+    <script>
+    // Check if the checkbox state is stored in local storage
+    if (localStorage.getItem("checkboxState")) {
+        // Retrieve the stored state and set the checkbox accordingly
+        document.getElementById("myCheckbox").checked = localStorage.getItem("checkboxState") === "true";
+    }
+
+    // Function to handle checkbox state change
+    function handleCheckboxChange() {
+        // Get the checkbox element
+        var checkbox = document.getElementById("myCheckbox");
+
+        // Store the checkbox state in local storage
+        localStorage.setItem("checkboxState", checkbox.checked);
+    }
+    </script>
+
 </body>
 </html>

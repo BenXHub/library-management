@@ -72,6 +72,9 @@
 
                         <label class="col-form-label col-form-label-lg mt-3" for="BookTitle">Book Title</label>
                         <input type="text" name="BookTitle" id="BookTitle" class="form-control form-control-lg" placeholder="Enter Book Title" autocomplete="off" value="<?php echo $BookTitle; ?>">
+                        
+                        <br>
+                        <p class="text-center"><b><i>Note:</b> *** Please ensure that the borrowed book is returned within <b>three (3) days</b> from the date of borrowing. As part of the borrowing process, we kindly ask that you leave your ID with our library staff during this period. Please be assured that your ID will be securely stored and returned to you once the book is successfully returned. Thank you. *** </i></p>
 
                         <div class="d-flex justify-content-end mt-4">
                             <a class="btn btn-secondary btn-lg me-2" href="#" data-bs-toggle="modal" data-bs-target="#cancelModal">Cancel</a>
