@@ -115,16 +115,38 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to borrow book?
+                    Are you sure you want to borrow the book?
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
-                    <input class="btn btn-primary" type="submit" name="submit" value="Submit" form="addBookForm">
+                    <input class="btn btn-primary" type="submit" name="submit" value="Submit" form="addBookForm" onclick="handleFormSubmit()">
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+    function handleFormSubmit() {
+            $.ajax({
+                url: "request.php",
+                type: "POST",
+                data: $("#addBookForm").serialize(),
+                success: function (response) {
+                    // Show success notification
+                    showNotification("Request successfully sent!");
+                },
+                error: function (xhr, status, error) {
+                    // Show error notification
+                    showNotification("Your request wasn't sent. Please try again later.");
+                }
+            });
+        }
+
+        function showNotification(message) {
+            // Replace this with your preferred notification method (e.g., using a library like Bootstrap Notify)
+            alert(message);
+        }
+    </script>
     <script>
         document.getElementById('addButton').addEventListener('click', function() {
             $('#addModal').modal('show'); // Show the modal dialog
